@@ -58,7 +58,7 @@ L'application sera accessible à l'adresse : `http://localhost:9000`
 - `POST /api/equipments` : Ajouter un équipement
 
 ## Auteurs
-- [Votre nom]
+- Balbino Tchoutzine and Five T
 
 ## Date de remise
 8 avril 2025
