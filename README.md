@@ -1,90 +1,64 @@
-# food-control-app
-# API de Gestion des Équipements
+# Gestion des Équipements Volés
+Application de gestion et de traçabilité des équipements électroniques volés.
 
-Une API RESTful pour la gestion des utilisateurs, téléphones et équipements.
+## Description
+Cette application permet de :
+- Gérer les déclarations d'équipements volés (téléphones, laptops, etc.)
+- Rechercher un équipement par IMEI ou adresse MAC
+- Alerter les propriétaires lors d'une correspondance
+- Suivre l'état des équipements déclarés
 
-## 🚀 Fonctionnalités
+## Technologies
+- Java (sans framework)
+- JavaFX pour l'interface graphique
+- MySQL pour la persistance des données
+- API REST pour la communication client-serveur
 
-### Gestion des Utilisateurs
-- Création de compte
-- Authentification
-- Mise à jour des informations
-- Suppression de compte
-- Récupération des détails utilisateur
-
-### Gestion des Téléphones
-- Ajout de nouveaux téléphones
-- Recherche par IMEI
-- Liste de tous les téléphones
-- Mise à jour des informations
-- Mise à jour du statut
-- Suppression
-
-### Gestion des Équipements
-- Ajout de nouveaux équipements
-- Recherche par adresse MAC
-- Liste de tous les équipements
-- Mise à jour des informations
-- Mise à jour du statut
-- Suppression
-
-## 🛠 Technologies Utilisées
-- Java
-- HTTP Server (com.sun.net.httpserver)
-- Architecture MVC
-
-## 🔧 Installation
-
-1. Clonez le repository
-```bash
-git clone [URL_DU_REPO]
+## Structure du Projet
+```
+src/
+├── Controller/
+│   ├── UserController.java
+│   ├── PhoneController.java
+│   └── equipementController.java
+├── Model/
+│   ├── User.java
+│   ├── Phone.java
+│   └── Equipment.java
+├── View/
+│   └── [fichiers JavaFX]
+└── App.java
 ```
 
-2. Compilez le projet
+## Installation
+1. Cloner le repository
+2. Installer JavaFX SDK
+3. Configurer MySQL
+4. Importer les dépendances nécessaires
+
+## Configuration
+1. Créer une base de données MySQL
+2. Configurer les paramètres de connexion dans le fichier de configuration
+3. Lancer le serveur sur le port 9000
+
+## Utilisation
+Pour démarrer l'application :
 ```bash
-javac -d bin src/*.java
+java -jar app.jar
 ```
 
-3. Lancez le serveur
-```bash
-java -cp bin App
-```
+L'application sera accessible à l'adresse : `http://localhost:9000`
 
-## 🌐 Endpoints API
+## Endpoints API
+- `GET /api/persons/{id}` : Récupérer un utilisateur
+- `POST /api/persons` : Créer un utilisateur
+- `POST /api/phones` : Enregistrer un téléphone
+- `GET /api/phones` : Liste des téléphones
+- `GET /api/equipments` : Liste des équipements
+- `POST /api/equipments` : Ajouter un équipement
 
-### Utilisateurs
-- `POST /api/persons` - Créer un utilisateur
-- `GET /api/persons/{id}` - Obtenir un utilisateur
-- `PUT /api/persons/{id}` - Mettre à jour un utilisateur
-- `DELETE /api/persons/{id}` - Supprimer un utilisateur
-- `POST /api/login` - Authentification
+## Auteurs
+- [Votre nom]
 
-### Téléphones
-- `POST /api/phones` - Ajouter un téléphone
-- `GET /api/phones` - Liste des téléphones
-- `GET /api/phones/{imei}` - Détails d'un téléphone
-- `PUT /api/phones/{imei}` - Modifier un téléphone
-- `PUT /api/phones/{imei}/status` - Modifier le statut
-- `DELETE /api/phones/{imei}` - Supprimer un téléphone
-- `GET /api/phones/search` - Rechercher un téléphone
-
-### Équipements
-- `POST /api/equipments` - Ajouter un équipement
-- `GET /api/equipments` - Liste des équipements
-- `GET /api/equipments/{mac}` - Détails d'un équipement
-- `PUT /api/equipments/{mac}` - Modifier un équipement
-- `PUT /api/equipments/{mac}/status` - Modifier le statut
-- `DELETE /api/equipments/{mac}` - Supprimer un équipement
-- `GET /api/equipments/search` - Rechercher un équipement
-
-## 📝 Configuration
-Le serveur fonctionne par défaut sur le port 9000.
-
-## 🤝 Contribution
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à proposer une pull request.
-
-## 📄 Licence
-[Type de Licence]
-
-## 👥 Auteurs
-[Vos noms] 
+## Date de remise
+8 avril 2025
